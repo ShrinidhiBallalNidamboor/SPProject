@@ -1,0 +1,1 @@
+cmd_/home/shrinidhi/SPProject/Encrypt/encrypt.ko := ld -r  -m elf_x86_64 -z noexecstack   --build-id=sha1  -T scripts/module.lds -o /home/shrinidhi/SPProject/Encrypt/encrypt.ko /home/shrinidhi/SPProject/Encrypt/encrypt.o /home/shrinidhi/SPProject/Encrypt/encrypt.mod.o;  true

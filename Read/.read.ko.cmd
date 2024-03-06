@@ -1,0 +1,1 @@
+cmd_/home/shrinidhi/SPProject/Read/read.ko := ld -r  -m elf_x86_64 -z noexecstack   --build-id=sha1  -T scripts/module.lds -o /home/shrinidhi/SPProject/Read/read.ko /home/shrinidhi/SPProject/Read/read.o /home/shrinidhi/SPProject/Read/read.mod.o;  true
