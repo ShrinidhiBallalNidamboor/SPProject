@@ -10,7 +10,7 @@ MODULE_DESCRIPTION("Touch");
 
 static char *filename = "default.txt"; // Default filename
 module_param(filename, charp, S_IRUGO); // Define module parameter for filename
-MODULE_PARM_DESC(filename, "Name of the file to create");
+MODULE_PARM_DESC(filename, "filename");
 
 static int __init touch_init(void){
 	struct file *fp = (struct file *) NULL;
