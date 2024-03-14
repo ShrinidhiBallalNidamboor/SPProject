@@ -1,0 +1,1 @@
+cmd_/home/shrinidhi/SPProject/ls/ls.ko := ld -r  -m elf_x86_64 -z noexecstack   --build-id=sha1  -T scripts/module.lds -o /home/shrinidhi/SPProject/ls/ls.ko /home/shrinidhi/SPProject/ls/ls.o /home/shrinidhi/SPProject/ls/ls.mod.o;  true

@@ -1,0 +1,1 @@
+cmd_/home/shrinidhi/SPProject/pwd/Module.symvers :=  sed 's/ko$$/o/'  /home/shrinidhi/SPProject/pwd/modules.order | scripts/mod/modpost -m -a    -o /home/shrinidhi/SPProject/pwd/Module.symvers -e -i Module.symvers -T - 
