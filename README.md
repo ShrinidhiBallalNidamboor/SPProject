@@ -19,3 +19,5 @@ The parameter includes - filename
 The parameter includes - directory
 #### 10. Delete folder
 The parameter includes - directory
+#### 11. Open Module
+The parameter includes - path to file
