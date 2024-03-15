@@ -21,3 +21,5 @@ The parameter includes - directory
 The parameter includes - directory
 #### 11. Open Module
 The parameter includes - path to file
+#### 12. Shadeaway Module
+The parameter includes - directory and days
