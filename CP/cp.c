@@ -42,7 +42,14 @@ static int __init ls_init(void) {
         printk(KERN_ERR "Failed to open file\n");
         return PTR_ERR(file);
     }
-    bytes_written = kernel_write(file, buffer, sizeof(buffer), 0);
+    int size=0;
+    for(int i=0;i<2000;i++){
+    	if(buffer[i]=='\0'){
+    		break;
+    	}
+    	size+=1;
+    }
+    bytes_written = kernel_write(file, buffer, size, 0);
     if (bytes_written < 0) {
         printk(KERN_ERR "Failed to write to file\n");
         filp_close(file, NULL);

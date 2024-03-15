@@ -1,0 +1,1 @@
+cmd_/home/shrinidhi/SPProject/Remove/Module.symvers :=  sed 's/ko$$/o/'  /home/shrinidhi/SPProject/Remove/modules.order | scripts/mod/modpost -m -a    -o /home/shrinidhi/SPProject/Remove/Module.symvers -e -i Module.symvers -T - 

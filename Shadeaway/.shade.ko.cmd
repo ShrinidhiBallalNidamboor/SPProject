@@ -1,0 +1,1 @@
+cmd_/home/shrinidhi/SPProject/Shadeaway/shade.ko := ld -r  -m elf_x86_64 -z noexecstack   --build-id=sha1  -T scripts/module.lds -o /home/shrinidhi/SPProject/Shadeaway/shade.ko /home/shrinidhi/SPProject/Shadeaway/shade.o /home/shrinidhi/SPProject/Shadeaway/shade.mod.o;  true

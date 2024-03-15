@@ -1,1 +1,1 @@
-/home/shrinidhi/CP/cp.o
+/home/shrinidhi/SPProject/CP/cp.o

@@ -1,0 +1,1 @@
+cmd_/home/shrinidhi/SPProject/Remove/remove.ko := ld -r  -m elf_x86_64 -z noexecstack   --build-id=sha1  -T scripts/module.lds -o /home/shrinidhi/SPProject/Remove/remove.ko /home/shrinidhi/SPProject/Remove/remove.o /home/shrinidhi/SPProject/Remove/remove.mod.o;  true

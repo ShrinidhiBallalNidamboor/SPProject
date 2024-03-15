@@ -1,0 +1,1 @@
+cmd_/home/shrinidhi/SPProject/Mkdir/mkdir.ko := ld -r  -m elf_x86_64 -z noexecstack   --build-id=sha1  -T scripts/module.lds -o /home/shrinidhi/SPProject/Mkdir/mkdir.ko /home/shrinidhi/SPProject/Mkdir/mkdir.o /home/shrinidhi/SPProject/Mkdir/mkdir.mod.o;  true

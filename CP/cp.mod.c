@@ -35,6 +35,7 @@ __used __section("__versions") = {
 	{ 0x570ce3ef, "filp_open" },
 	{ 0x559733f2, "kernel_read" },
 	{ 0x55bbf72f, "filp_close" },
+	{ 0x87a21cb3, "__ubsan_handle_out_of_bounds" },
 	{ 0xab2e2714, "kernel_write" },
 	{ 0x5b34092f, "param_ops_charp" },
 	{ 0xb6924ec5, "module_layout" },
@@ -43,4 +44,4 @@ __used __section("__versions") = {
 MODULE_INFO(depends, "");
 
 
-MODULE_INFO(srcversion, "B7DC9D7A2E69D9636BDAD52");
+MODULE_INFO(srcversion, "16EF216D269C4DFCDF1A6C6");

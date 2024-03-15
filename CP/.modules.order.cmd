@@ -1,1 +1,1 @@
-cmd_/home/shrinidhi/CP/modules.order := {   echo /home/shrinidhi/CP/cp.ko; :; } > /home/shrinidhi/CP/modules.order
+cmd_/home/shrinidhi/SPProject/CP/modules.order := {   echo /home/shrinidhi/SPProject/CP/cp.ko; :; } > /home/shrinidhi/SPProject/CP/modules.order
