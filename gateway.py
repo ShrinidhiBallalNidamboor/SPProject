@@ -12,7 +12,8 @@ print("8.  Remove file (remove filename=path)")
 print("9.  Make folder (mkdir directory=path)")
 print("10. Remove folder (rmdir directory=path)")
 print("11. Edit file (open file_path)")
-print("12.  Exit (exit)")
+print("12. Shade away the old files (shadeaway directory=path days=days)")
+print("13.  Exit (exit)")
 
 hashing={}
 hashing["copy"]=["sudo insmod CP/cp.ko", "sudo rmmod CP/cp.ko"]
@@ -26,6 +27,7 @@ hashing["remove"]=["sudo insmod Remove/remove.ko", "sudo rmmod Remove/remove.ko\
 hashing["mkdir"]=["sudo insmod Mkdir/mkdir.ko", "sudo rmmod Mkdir/mkdir.ko\npython3 Mkdir/mkdir.py"]
 hashing["rmdir"]=["sudo insmod Rmdir/rmdir.ko", "sudo rmmod Rmdir/rmdir.ko\npython3 Rmdir/rmdir.py"]
 hashing["open"]=["./editor", ""]
+hashing["shadeaway"]=["sudo insmod Shadeaway/shade.ko", "sudo rmmod Shadeaway/shade.ko\npython3 Shadeaway/shade.py"]
 
 while True:
 	cmd=input("Input command: ")
