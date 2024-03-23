@@ -74,20 +74,33 @@ void deleteCharacter(char text[MAX_ROWS][MAX_COLS], int *cursorRow, int *cursorC
     }
 }
 
-void specialCharacter(int *cursorRow, int *cursorCol, int c) {
+void printCharacter(int *cursorRow, int *cursorCol, int c) {
     if (c == 20) {
     	printf("✔");
     }
     else if (c == 24) {
-    	printf("X");
+    	printf("✘");
     }
     else {
     	putchar(c);
+    }   
+}
+
+void specialCharacter(int *cursorRow, int *cursorCol, int c) {
+    FILE *file;
+    file=fopen("Test/keyboard.txt", "w");
+    fputc(c, file);
+    fclose(file);
+    usleep(200000);
+    file=fopen("Test/keyboard.txt", "r, ccs=UTF-8");
+    while ((c = fgetc(file)) != EOF) {
+        putchar(c);
     }
+    remove("Test/keyboard.txt");
 }
 
 // Function to insert character at cursor position
-void insertCharacter(char text[MAX_ROWS][MAX_COLS], int *cursorRow, int *cursorCol, int c) {
+void insertCharacter(char text[MAX_ROWS][MAX_COLS], int *cursorRow, int *cursorCol, int c, int print) {
     if (*cursorCol < MAX_COLS) {
         if (c=='\n') {
             int valid=0;
@@ -105,12 +118,18 @@ void insertCharacter(char text[MAX_ROWS][MAX_COLS], int *cursorRow, int *cursorC
             if (valid==0) {
             	text[*cursorRow][0]='\n';
             }
-            specialCharacter(cursorRow, cursorCol, c);
+            if(print==0)
+            	specialCharacter(cursorRow, cursorCol, c);
+            else
+            	printCharacter(cursorRow, cursorCol, c);
             moveCursorNext(cursorRow, cursorCol);
         }
         else {
             text[*cursorRow][*cursorCol] = c;
-    	    specialCharacter(cursorRow, cursorCol, c);
+            if(print==0)
+            	specialCharacter(cursorRow, cursorCol, c);
+            else
+    	    	printCharacter(cursorRow, cursorCol, c);
             if (*cursorCol == MAX_COLS) {
    	        moveCursorNext(cursorRow, cursorCol);
    	    }
@@ -156,7 +175,7 @@ int main(int argc, char *argv[]) {
 
     // Read existing content of the file
     while ((c = fgetc(file)) != EOF) {
-        insertCharacter(text, &cursorRow, &cursorCol, c);
+        insertCharacter(text, &cursorRow, &cursorCol, c, 1);
     }
     fclose(file);
     initTermios(&oldTermios); // Turn off canonical mode and echo
@@ -189,7 +208,7 @@ int main(int argc, char *argv[]) {
             if (cursorCol==0){
                 for (int i=0;i<MAX_COLS;i++){
             	    if (buffer[i]!='\n') {
-            	    	insertCharacter(text, &cursorRow, &cursorCol, buffer[i]);
+            	    	insertCharacter(text, &cursorRow, &cursorCol, buffer[i], 1);
             	    }
             	    else{
             	    	break;
@@ -218,7 +237,7 @@ int main(int argc, char *argv[]) {
             deleteCharacter(text, &cursorRow, &cursorCol);
 	}
         else {
-            insertCharacter(text, &cursorRow, &cursorCol, c);
+            insertCharacter(text, &cursorRow, &cursorCol, c, 0);
         }
     }
 

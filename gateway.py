@@ -26,7 +26,7 @@ hashing["touch"]=["sudo insmod TOUCH/touch.ko", "sudo rmmod TOUCH/touch.ko"]
 hashing["remove"]=["sudo insmod Remove/remove.ko", "sudo rmmod Remove/remove.ko\npython3 Remove/remove.py"]
 hashing["mkdir"]=["sudo insmod Mkdir/mkdir.ko", "sudo rmmod Mkdir/mkdir.ko\npython3 Mkdir/mkdir.py"]
 hashing["rmdir"]=["sudo insmod Rmdir/rmdir.ko", "sudo rmmod Rmdir/rmdir.ko\npython3 Rmdir/rmdir.py"]
-hashing["open"]=["./editor", ""]
+hashing["open"]=["sudo insmod Test/interrupt.ko\n./editor", "sudo rmmod Test/interrupt.ko"]
 hashing["shadeaway"]=["sudo insmod Shadeaway/shade.ko", "sudo rmmod Shadeaway/shade.ko\npython3 Shadeaway/shade.py"]
 
 while True:
@@ -36,18 +36,14 @@ while True:
 	try:
 		result=cmd.split(" ")
 		if result[0]=="open":
-			with open(result[1], "r") as fd:
-				text=fd.read()
-				with open("editor.txt", "w") as fd:
-					fd.write(text)
+			cmd="cp "+result[1]+" editor.txt"
+			os.system(cmd)
 		cmd1=hashing[result[0]][0]+" "+" ".join(result[1:])
 		cmd2=hashing[result[0]][1]
 		os.system(cmd1)
 		os.system(cmd2)
 		if result[0]=="open":
-			cmd1="sudo insmod CP/cp.ko from=editor.txt "+"to="+result[1]
-			cmd2="sudo rmmod CP/cp.ko"
-			os.system(cmd1)
-			os.system(cmd2)
+			cmd="cp editor.txt "+result[1]
+			os.system(cmd)
 	except:
 		print("Incorrect command")
