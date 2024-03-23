@@ -20,6 +20,6 @@ The parameter includes - directory
 #### 10. Delete folder
 The parameter includes - directory
 #### 11. Open Module
-The parameter includes - path to file
+The parameter includes - path to file, ctrl+d (for saving), ctrl+b (copying), and ctrl+v (pasting)
 #### 12. Shadeaway Module
 The parameter includes - directory and days
