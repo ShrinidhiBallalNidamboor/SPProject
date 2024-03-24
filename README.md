@@ -20,6 +20,9 @@ The parameter includes - directory
 #### 10. Delete folder
 The parameter includes - directory
 #### 11. Open Module
-The parameter includes - path to file
+The parameter includes - path to file, ctrl+d (for saving), 
+ctrl+b (copying), ctrl+t(tick character), ctrl+x(cross character), 
+and ctrl+v (pasting)
+Run bottomhalf.py for this command in another terminal
 #### 12. Shadeaway Module
 The parameter includes - directory and days
